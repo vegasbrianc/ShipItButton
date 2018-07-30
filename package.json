@@ -1,0 +1,14 @@
+{
+  "name": "ship-it-button",
+  "version": "1.0.0",
+  "description": "To deploy and release through an AWS button",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ani6gup",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/rest": "^15.9.4"
+  }
+}
