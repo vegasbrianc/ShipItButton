@@ -26,7 +26,7 @@ exports.handler = (event, context, callback) => {
             tag_name: newTagName
         }, (error, result) => {
             if (error) throw new error;
-            if (result) console.log("Created Deployment: " + JSON.string(result));
+            if (result) console.log("Created Deployment: " + JSON.stringify(result));
         });
     })
 
@@ -37,6 +37,6 @@ exports.handler = (event, context, callback) => {
         description: "Deploying " + newTagName + " version"
     }, (error, result) => {
         if (error) throw new error;
-        if (result) console.log("Created Deployment: " + JSON.string(result));
+        if (result) console.log("Created Deployment: " + JSON.stringify(result));
     })
 } 
