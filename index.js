@@ -8,6 +8,7 @@ octokit.authenticate({
 
 exports.handler = (event, context, callback) => {
   console.log(`Received event: ${event}`)
+  let tag_name
   const owner = process.env.GH_LOGIN
   const repo = process.env.GH_REPO
 
@@ -15,7 +16,7 @@ exports.handler = (event, context, callback) => {
     owner,
     repo
   }).then(result => {
-    let tag_name = (parseInt(result.data.tag_name) + 1.0).toString() + '.0'
+    tag_name = (parseInt(result.data.tag_name) + 1.0).toString() + '.0'
 
     octokit.repos.createRelease({
       owner,
@@ -31,7 +32,7 @@ exports.handler = (event, context, callback) => {
     owner,
     repo,
     ref: 'master',
-    description: `Deploying ${newTagName} version`
+    description: `Deploying ${tag_name} version`
   }, (error, result) => {
     if (error) throw new Error()
     if (result) console.log(`Created Deployment: ${JSON.stringify(result)}`)
