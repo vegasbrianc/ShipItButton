@@ -24,7 +24,7 @@ exports.handler = (event, context, callback) => {
       tag_name
     }, (error, result) => {
       if (error) throw new Error()
-      if (result) console.log(`Created Deployment: ${JSON.stringify(result)}`)
+      if (result) console.log(`Created Release: ${JSON.stringify(result)}`)
     })
   })
 
