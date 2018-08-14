@@ -1,4 +1,4 @@
-const octokit = require('@octokit/rest')
+const octokit = require('@octokit/rest')()
 
 // authenticate through GitHub Token w/ Octokit
 octokit.authenticate({
